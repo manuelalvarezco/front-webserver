@@ -1,17 +1,40 @@
-<mat-card class="example-card">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-    </mat-card-actions>
-</mat-card>
+<div class="owned-card">
+    <div class="owned-card__header">
+        <mat-checkbox class="owned-card__header--select"></mat-checkbox>
+        <div class="owned-card__header--menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+                <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+                <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+            </mat-menu>
+        </div>
+
+    </div>
+    <div class="owner-card__image">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+    </div>
+    <div class="owned-card__info">
+        <span>{{user.name}}</span>
+        <span>{{user.email}}</span>
+    </div>
+    <div class="owned-card__socials">
+        <div class="owned-card__socials--facebook">
+            <small>Clientes: </small> <strong> 21313</strong>
+        </div>
+        <div class="owned-card__socials--twitter">
+            <small>Ventas: </small><strong> 123</strong>
+        </div>
+    </div>
+</div>

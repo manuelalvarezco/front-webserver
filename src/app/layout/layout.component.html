@@ -1,12 +1,12 @@
 <app-navbar></app-navbar>
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer [(opened)]="opened" class="example-sidenav" mode="side">
-        <p>Auto-resizing sidenav</p>
-    </mat-drawer>
 
-    <div class="example-sidenav-content">
+<mat-sidenav-container class="example-container">
+    <mat-sidenav class="mat-sidenav" mode="over" [(opened)]="opened">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
         <router-outlet></router-outlet>
-    </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
-</mat-drawer-container>
 <app-footer></app-footer>

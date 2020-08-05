@@ -1,0 +1,74 @@
+.owned-card {
+    position: relative;
+    padding: 5px;
+    display: flex;
+    max-width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 767px) {
+    .owned-card {
+        max-width: 100%;
+    }
+}
+
+.owned-card__header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    top: 15px;
+    margin-left: 5px;
+}
+
+.owned-card__header--menu {
+    position: absolute;
+    right: 0;
+}
+
+.owned-card__header--select {
+    position: absolute;
+    left: 0;
+}
+
+.owner-card__image img {
+    border-radius: 50%;
+}
+
+.owned-card__info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.owned-card__info span:nth-of-type(1) {
+    margin: 5px;
+}
+
+.owned-card-__info span:nth-of-type(2) {
+    margin: 10px;
+}
+
+.owned-card__socials {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+.owned-card__socials div {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.owned-card__socials--facebook span,
+.owned-card__socials--twitter span,
+.owned-card__socials--instagram span {
+    margin-left: 5px;
+}

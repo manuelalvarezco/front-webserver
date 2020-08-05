@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  users: any;
+  users: User[];
 
   constructor(private userService: UserService){
 
@@ -20,7 +20,6 @@ export class UsersComponent implements OnInit {
 
     this.userService.getUsers()
       .subscribe( users => {
-        console.log(users);
         this.users = users;
       });
   }
