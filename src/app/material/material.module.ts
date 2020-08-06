@@ -7,6 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
 
 
 const material = [
@@ -17,7 +18,8 @@ const material = [
   MatCardModule,
   MatMenuModule,
   MatCheckboxModule,
-  MatListModule
+  MatListModule,
+  MatInputModule
 ];
 
 @NgModule({

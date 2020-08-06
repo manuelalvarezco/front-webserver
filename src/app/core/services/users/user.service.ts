@@ -1,7 +1,7 @@
 import { User } from './../../models/user';
 import { environment } from './../../../../environments/environment';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,14 @@ export class UserService {
 
 
   getUsers(): Observable<User[]>{
-    return this.http.get(`${environment.API_URL}users`)
+
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json',
+      Authorization : localStorage.getItem('token')
+    });
+
+
+    return this.http.get(`${environment.API_URL}users`, {headers})
       .pipe(
         map( (response: any) => response.users as User[])
       );
@@ -22,10 +29,6 @@ export class UserService {
 
   // tslint:disable-next-line: typedef
   getUser(){
-    return this.http.get(`${environment.API_URL}users`)
-      .pipe(
-        map( (resp: any) => resp.data)
-      );
   }
 
   // tslint:disable-next-line: typedef

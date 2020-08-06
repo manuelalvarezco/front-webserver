@@ -1,0 +1,19 @@
+<div class="box-login">
+    <div class="form-login">
+        <h1>Sing In</h1>
+        <form [formGroup]="form" (ngSubmit)="login()" class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>User</mat-label>
+                <input formControlName="email" matInput>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" formControlName="password" matInput>
+            </mat-form-field>
+
+            <button [disabled]="!form.valid" class="example-form__button" mat-raised-button color="primary">Sing in</button>
+        </form>
+
+    </div>
+</div>
