@@ -6,6 +6,13 @@
     padding: 10px;
 }
 
+.form-login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .form-login h1 {
     text-align: center;
 }

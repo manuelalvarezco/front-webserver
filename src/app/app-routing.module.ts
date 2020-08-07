@@ -6,19 +6,19 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'login' },
-      {
-        path: 'login',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-      },
-      {
-        path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-      },
       {
         path: 'users',
         canActivate: [AuthGuard],

@@ -2,7 +2,6 @@
     position: relative;
     padding: 5px;
     display: flex;
-    max-width: 280px;
     border: 1px solid #ccc;
     border-radius: 8px;
     align-items: center;
